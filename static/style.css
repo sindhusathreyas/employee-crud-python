@@ -1,0 +1,36 @@
+body {
+    background-color: #f5f7fa;
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+}
+
+.table {
+    background-color: white;
+}
+
+.table th {
+    white-space: nowrap;
+}
+
+.btn {
+    border-radius: 6px;
+}
+
+.form-control {
+    border-radius: 6px;
+}
+
+h2 {
+    font-weight: 600;
+}
