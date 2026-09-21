@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
-from db import get_db_connection
+from db import get_db_connection, get_dict_cursor, initialize_database
 import os
 
 
 app = Flask(__name__)
-
+initialize_database()
 
 # -------------------------
 # HOME / READ
@@ -17,8 +17,7 @@ def index():
 
     connection = get_db_connection()
 
-    cursor = connection.cursor(dictionary=True)
-
+    cursor = get_dict_cursor(connection)
     if search:
 
         search_term = f"%{search}%"
@@ -113,7 +112,7 @@ def edit_employee(id):
 
     connection = get_db_connection()
 
-    cursor = connection.cursor(dictionary=True)
+    cursor = get_dict_cursor(connection)
 
     if request.method == "POST":
 
